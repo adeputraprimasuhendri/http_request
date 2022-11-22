@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_http/request_controller.dart';
+import 'package:flutter_http/screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,32 +17,5 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomeScreen(),
     );
-  }
-}
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  final RequestController requestController = RequestController();
-
-  loadAlbum() async {
-    var a = await requestController.fetchAlbum();
-    print(a);
-  }
-
-  @override
-  void initState() {
-    loadAlbum();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
